@@ -11,7 +11,9 @@
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {
-    "start": "vite"
+    "start": "vite",
+    "build": "vite build"
+    
   },
   "keywords": [],
   "author": "",
