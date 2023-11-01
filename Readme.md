@@ -1,6 +1,6 @@
 A simple Calculator made using HMTL,TAILWIND CSS, AND JS
 
-💎Features
+💎Features<br>
 -History - double click on (+/-) button <br>
 -Tap to Copy - Double tap on display to copy result
 
