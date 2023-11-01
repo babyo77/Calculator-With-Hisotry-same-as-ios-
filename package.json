@@ -4,16 +4,11 @@
     "postcss": "^8.4.31",
     "tailwindcss": "^3.3.5"
   },
-  "dependencies": {
-    "vite": "^4.5.0"
-  },
   "name": "calculator",
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {
-    "start": "vite",
-    "build": "vite build"
-    
+    "start": "vite"
   },
   "keywords": [],
   "author": "",
