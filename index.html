@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="app.css">
+    <link rel="shortcut icon" href="Assets/Favicon.gif" type="image/x-icon">
+</head>
+<body class="flex justify-center items-center h-screen bg-black">
+    <div class=" cursor-pointer history hidden text-white text-3xl font-bold text-center flex-col gap-3 justify-center items-center absolute h-screen w-screen bg-black z-10">
+       <h3>History</h3>
+       <div class="show overflow-scroll h-72 hidden"></div>
+    </div>
+    <div class="alert hidden animate-bounce bg-gray-300 rounded-full top-16 absolute text-black p-2 px-6 justify-self-center shadow-md" role="alert">
+        <div class="flex items-center justify-center">
+          <div class="py-1"><svg class="fill-current h-6 w-6 text-black mr-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M2.93 17.07A10 10 0 1 1 17.07 2.93 10 10 0 0 1 2.93 17.07zm12.73-1.41A8 8 0 1 0 4.34 4.34a8 8 0 0 0 11.32 11.32zM9 11V9h2v6H9v-4zm0-6h2v2H9V5z"/></svg></div>
+          <div>
+            <p class="msg text-center">Copied To Clipboard</p>
+          </div>
+        </div>
+      </div>
+    <div class="w-72 text-3xl text-white">
+        <div class="bg-black p-4 pt-0 rounded-lg shadow-md">
+            <div class="text-5xl text-right mb-3 pr-2 w-64 overflow-x-scroll p-3 cursor-pointer" id="display">0</div>
+            <div class="grid grid-cols-4 gap-2">
+                <button class="button bg-gray-200 p-3 rounded-full text-gray-800" onclick="clearDisplay()">C</button>
+                <button class="button bg-gray-200 text-gray-800 italic p-3 rounded-full" onclick="addsybmol()" style="letter-spacing: -.3rem;" id="History"><sup>+</sup>/<sub style="font-weight: 570;">-</sub> &nbsp;</button>
+                <button class="button bg-gray-200 p-3 rounded-full text-gray-800" onclick="appendToDisplay('%')">%</button>
+                <button class="button bg-orange-400 p-3 rounded-full text-white" onclick="appendToDisplay('/')">÷</button>
+                <button class="button text-white p-3 rounded-full" onclick="appendToDisplay('7')" style="background-color:#333333;">7</button>
+                <button class="button text-white p-3 rounded-full" onclick="appendToDisplay('8')" style="background-color:#333333;">8</button>
+                <button class="button text-white p-3 rounded-full" onclick="appendToDisplay('9')" style="background-color:#333333;">9</button>
+                <button class="button bg-orange-400 text-white p-3 rounded-full" onclick="appendToDisplay('x')">x</button>
+                <button class="button text-white p-3 rounded-full" onclick="appendToDisplay('4')" style="background-color:#333333;">4</button>
+                <button class="button text-white p-3 rounded-full" onclick="appendToDisplay('5')" style="background-color:#333333;">5</button>
+                <button class="button text-white p-3 rounded-full" onclick="appendToDisplay('6')" style="background-color:#333333;">6</button>
+                <button class="button bg-orange-400 text-white p-3 rounded-full" onclick="appendToDisplay('-')">-</button>
+                <button class="button text-white p-3 rounded-full" onclick="appendToDisplay('1')" style="background-color:#333333;">1</button>
+                <button class="button text-white p-3 rounded-full" onclick="appendToDisplay('2')" style="background-color:#333333;">2</button>
+                <button class="button text-white p-3 rounded-full" onclick="appendToDisplay('3')" style="background-color:#333333;">3</button>
+                <button class="button bg-orange-400 p-3 rounded-full text-white" onclick="appendToDisplay('+')">+</button>
+                <button class="button text-white p-3 text-left pl-5 rounded-full" onclick="appendToDisplay('0')" style="background-color:#333333; width: 7.77rem;">0</button>
+                <button onclick="appendToDisplay('0')"></button>
+                <button class="button text-white p-3 rounded-full" onclick="appendToDisplay('.')" style="background-color:#333333;">.</button>
+                <button class="button bg-orange-400 p-3 rounded-full text-white" onclick="result()">=</button>
+            </div>
+        </div>
+    </div>
+    <script src="app.js" defer></script>
+</body>
+</html>
