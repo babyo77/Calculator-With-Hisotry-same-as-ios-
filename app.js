@@ -1,5 +1,4 @@
 let input = document.querySelector("#display") // display area
-let symbol = true  // boolean for toggle
 
 // to append arithmetic operators and no to display
 
@@ -44,18 +43,6 @@ function result() {
     }
 }
 
-// symbol button toggle (-)
-
-function addsybmol() {
-    if (symbol == true) {
-        input.textContent = "-" + input.textContent
-        symbol = false
-    } else {
-        input.textContent = input.textContent.replace(/-/g, "")
-        symbol = true
-    }
-}
-
 // double click to copy 
 
 input.addEventListener('dblclick', () => {
@@ -76,7 +63,7 @@ history.addEventListener('dblclick',()=>{
 })
 
 
-document.getElementById("History").addEventListener('dblclick',()=>{
+document.getElementById("History").addEventListener('click',()=>{
   history.style.display="flex"
 })
 
