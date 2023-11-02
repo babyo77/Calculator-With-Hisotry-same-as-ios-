@@ -83,3 +83,34 @@ function showHistory() {
 }
 
 showHistory();
+
+// Click to delete
+
+input.addEventListener('click',()=>{
+    input.textContent =  input.textContent.slice(0,-1)
+    if(input.textContent.length==0){
+        input.textContent="0"
+    }
+})
+
+// swipe to delete
+
+let touchStartX = 0;
+let touchEndX = 0;
+
+input.addEventListener('touchstart', (e) => {
+    touchStartX = e.touches[0].clientX;
+});
+
+input.addEventListener('touchend', (e) => {
+    touchEndX = e.changedTouches[0].clientX;
+
+    const swipeDistance = touchEndX - touchStartX;
+
+    if (swipeDistance > 30) { 
+        input.textContent =  input.textContent.slice(0,-1)
+    if(input.textContent.length==0){
+        input.textContent="0"
+    }
+    }
+});
