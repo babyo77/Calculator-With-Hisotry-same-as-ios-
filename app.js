@@ -5,6 +5,7 @@ let input = document.querySelector("#display") // display area
 function appendToDisplay(value) {
     if (input.textContent == 0) input.textContent = ""
     input.textContent += value
+    input.scrollLeft = input.scrollWidth;
 }
 
 // clear Display
@@ -43,16 +44,24 @@ function result() {
     }
 }
 
-// double click to copy 
+// hold to copy
 
-input.addEventListener('dblclick', () => {
-    navigator.clipboard.writeText(input.textContent)
+let pressTimer;
+
+input.addEventListener('mousedown', () => {
+    pressTimer = setTimeout(() => {
+        navigator.clipboard.writeText(input.textContent)
         document.querySelector('.alert').style.display = "block"
         document.querySelector('.msg').textContent = "Copied To Clipboard"
         setTimeout(() => {
             document.querySelector('.alert').style.display = "none"
         }, 3000);
+    }, 1700);
 })
+
+input.addEventListener('mouseup', () => {
+    clearTimeout(pressTimer);
+  })
 
 
 // history
@@ -114,3 +123,5 @@ input.addEventListener('touchend', (e) => {
     }
     }
 });
+
+
